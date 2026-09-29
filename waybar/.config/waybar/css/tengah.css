@@ -1,0 +1,93 @@
+@import "color.css";
+
+#center {
+    background: @bg1;
+    font-size: 15px;
+    border: 1px solid @bd1;
+    border-style: groove;
+    border-bottom-width: 2px;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin: 4px;
+}
+
+#custom-weather {
+    background-color: rgb(19, 45, 49);
+    border: 1px solid #7785d2;
+    border-radius: 12px;
+    border-style: double;
+    padding: 4px 10px;
+    margin: 4px;
+}
+
+#center #workspaces {
+    min-width: 50px;
+    font-size: 2px;
+    padding: 0px 6px;
+    margin: 6px 4px;
+    border-radius: 99px;
+}
+
+#center #workspaces button {
+    background-color: rgb(54, 66, 62);
+    color: transparent;
+    padding: 0 5px;
+    border-radius: 12px;
+    min-width: 9px;
+    margin: 0px 2px;
+}
+
+#center #workspaces button.active {
+    background-color: aquamarine;
+    min-width: 17px;
+    transition: all 100ms ease-in-out;
+}
+
+#center #clock {
+    padding: 0 17px;
+}
+
+#center #network {
+    padding: 0 7px;  
+}
+
+#center #network.two.ethernet {
+    background-color: rgb(33, 61, 30);
+    border-radius: 4px;
+    font-size: 9px;
+}
+
+#center #network.wifi {
+    background-color: rgb(38, 82, 108);
+    border-radius: 4px;
+}
+
+/* set animasi */
+@keyframes blink-animation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#center #network.disconnected {
+    background-color: rgb(86, 25, 2);
+    border-radius: 4px;
+    animation-name: blink-animation;
+    animation-duration: 2s;
+    animation-iteration-count: 5;
+}
+
+#custom-gempa {
+    background-color: rgb(12, 12, 12);
+    border: 2px solid #574102;
+    border-radius: 12px;
+    border-style: double;
+    padding: 4px 10px;
+    margin: 4px;
+}

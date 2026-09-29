@@ -1,0 +1,52 @@
+@import "color.css";
+
+#left #mpris.playing {
+    background: @bg1;
+    font-size: 15px;
+    border: 1px @bd1;
+    border-style: groove;
+    border-bottom-width: 2px;
+    border-radius: 6px;
+    padding: 4px 5px;
+    margin: 4px;
+}
+
+@keyframes blink-animation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#left #mpris.paused {
+    background: @bg1;
+    font-size: 15px;
+    border: 1px @bd1;
+    border-style: groove;
+    border-bottom-width: 2px;
+    border-radius: 6px;
+    padding: 4px 5px;
+    margin: 4px;
+    animation-name: blink-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+tooltip {
+    background-color: rgba(22, 30, 39, 0.9);
+    border-radius: 5px;
+    border-top: 2 solid #4a4a42;
+    border-style: groove;
+    padding: 1px;
+}
+
+tooltip label {
+    font-size: 14px;
+    color: #cdd6f4;
+    
+}

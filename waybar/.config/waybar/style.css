@@ -1,0 +1,10 @@
+
+@import "css/kiri.css";
+@import "css/tengah.css";
+@import "css/kanan.css";
+
+* {
+    all:unset;
+    font-family: mononoki, JetBrainsMono Nerd Font, sans-serif;
+    color: rgb(160, 160, 160);
+}

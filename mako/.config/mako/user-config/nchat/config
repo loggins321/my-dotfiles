@@ -1,0 +1,17 @@
+background-color=#0E4715
+text-color=#ffffff
+border-radius=3
+padding=3
+
+default-timeout=5400
+
+font=mononoki 13
+
+width=400
+height=300
+icons=1
+max-icon-size=43
+icon-location=left
+anchor=top-center
+
+on-notify=exec mpv ~/.config/mako/user-config/nchat/audio/tone-1.mp3

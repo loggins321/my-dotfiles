@@ -1,0 +1,155 @@
+// author : Andre
+
+{   
+    "layer" : "top",
+    "posision": "top",
+    "height": 25,
+    //"spacing": 4,
+
+    "modules-left": [
+        "group/left"
+    
+    ],
+    "modules-center": [
+        "custom/weather",
+        "group/center",
+        "custom/gempa"
+    ],
+    "modules-right": [
+        "custom/media",
+        "group/right"
+    ],
+    
+    "group/left": {
+        "orientation": "horizontal",
+        "modules": [
+            "mpris"
+        ]
+    },
+    "group/center": {
+        "orientation": "horizontal",
+        "modules": [
+            "hyprland/workspaces",
+            "clock",  
+            // "bluetooth",
+            "network",
+            "network#two"
+        ]
+    },
+    "group/right": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "cpu",
+            "disk",
+            "temperature"
+        ]
+    },
+
+    "mpris": {
+        "format": "󰤺:{player_icon} <b>{artist}</b> {title} {album}",
+        "format-paused": "󰤺:{status_icon} <b>{artist}</b> {title} {album}",
+        "tooltip-format": "{artist} {title} {album}",
+        "max-length": 50,
+        "player-icons": {
+            "brave": " 󰗃",
+            "mpv": " 󰠃",
+            "chromium": " 󰗃"
+        },
+        "status-icons": {
+            "paused": " "
+        }
+    },
+
+    "custom/weather": {
+        "exec": "sleep 6 && bash ~/.config/waybar/scripts/weather.sh",
+        "interval": 1800,
+        "return-type": "json",
+        "on-click": "qutebrowser --target window https://www.bmkg.go.id/cuaca/prakiraan-cuaca/35.08.11.2006"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": ""
+        },
+        "sort-by-number": true
+    },
+
+    "clock": {
+        "interval": 60,
+        "timezone": "Asia/Jakarta",
+        "format": "󰥔 {:%H:%M}",
+        "max-length": 25,
+        "tooltip": false,
+        "on-click": "bash ~/.config/waybar/scripts/date.sh",
+        "on-click-right": "bash ~/.config/waybar/scripts/calender.sh"
+    },
+
+    "custom/media": {
+        "exec": "lsblk -rno RM,MOUNTPOINT | awk '$1==1 && $2!=\"\" {print \"󰨣 Flashdisk\"}'",
+        "interval": 2,
+        "on-click": "notify-send 'Disk Mounted' 'Ada removable disk terpasang'"
+    },
+
+    "network": {
+        "interface": "wlan*",
+        "format": "{ifname}",
+        "format-wifi": "󰖩 <b>Online</b> | {bandwidthTotalBytes}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "format-disconnected": "󰖪 <b>Offline</b>", //An empty format will hide the module.      
+        "max-length": 50
+    },
+
+    "network#two": {
+        "interface": "enp6s*",
+        "format": "{ifname}",
+        "format-ethernet": "󰱓 <b>Online</b> | {bandwidthTotalBytes}",
+        "format-disconnected": "󰅛 <b>Offline</b>", //An empty format will hide the module.
+        "tooltip-format-ethernet": "{ifname} ",
+        "max-length": 50
+    },
+
+    "custom/gempa": {
+        "exec": "sleep 6 && bash ~/.config/waybar/scripts/gempa.sh",
+        "interval": 120,
+        "return-type": "json",
+        "on-click": "qutebrowser --target window https://www.bmkg.go.id/gempabumi"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": [" ", " "]
+        },
+        "scroll-step": 5,
+        "on-click": "pwvucontrol"
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "max-length": 10
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": " {percentage_used}%"
+
+    },
+
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "warning-threshold": 75,
+        "critical-threshold": 80,
+        "format-critical": " {temperatureC}°C",
+        "format": " {temperatureC}°C"
+    }
+}

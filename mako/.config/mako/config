@@ -1,0 +1,15 @@
+[urgency=normal]
+font=JetBrainsMono Nerd Font Propo 11
+background-color=#0a0e05
+text-color=#fffacd
+border-size=1
+border-color=#adff2f
+default-timeout=2200
+
+[urgency=low]
+font=JetBrainsMono Nerd Font Propo 11
+background-color=#0a0e05
+text-color=#fffacd
+border-size=1
+border-color=#adff2f
+default-timeout=2200
