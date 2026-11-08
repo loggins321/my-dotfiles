@@ -45,6 +45,7 @@ alias ydl="bash ~/Scripts/yt-dlp/ydl.sh"
 alias aa="source ~/python/bin/activate"
 alias tt="bash ~/Scripts/aria2/torrent.sh"
 alias ai="brave --app-id=cadlkienfkclaiaibeoongdcgmdikeeg & disown"
+alias prop="hyprctl clients -j | jq '.[0]'"
 
 # aliases Game
 alias factorio="wineprefix=~/games wine ~/games/Factorio.v2.0.76/Factorio/bin/x64/factorio.exe"

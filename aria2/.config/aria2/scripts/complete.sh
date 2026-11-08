@@ -1,9 +1,10 @@
 #!/bin/bash
 
-gid="$1" # ID dari downloader aria2
-num="$2" # Jumlah file yang di download (aria2 mendukung multifile)
+gid="$1"  # ID dari downloader aria2
+num="$2"  # Jumlah file yang di download (aria2 mendukung multifile)
 path="$3" # tujuan dan nama file
 
 x=$(basename "$path")
 
 notify-send -a aria2c -c download.complete "Download Seelsai" "$x"
+mpv ~/.config/aria2/audio/download-complete.mp3
