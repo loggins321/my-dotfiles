@@ -15,6 +15,7 @@ config.bind("cc", "open https://www.nerdfonts.com/cheat-sheet")
 config.bind("ad", "adblock-update")
 config.bind("ss", "open https://quickshell.org")
 config.bind("bc", "open https://batchmanga.in")
+config.bind("gh", "open https://github.com")
 
 # hint char
 c.hints.chars = "asdjklhf"
