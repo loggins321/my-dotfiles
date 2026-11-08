@@ -8,27 +8,27 @@
 -- Example window rules that are useful
 
 local suppressMaximizeRule = hl.window_rule({
-    -- Ignore maximize requests from all apps. You'll probably like this.
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
+	-- Ignore maximize requests from all apps. You'll probably like this.
+	name = "suppress-maximize-events",
+	match = { class = ".*" },
 
-    suppress_event = "maximize",
+	suppress_event = "maximize",
 })
 -- suppressMaximizeRule:set_enabled(false)
 
 hl.window_rule({
-    -- Fix some dragging issues with XWayland
-    name  = "fix-xwayland-drags",
-    match = {
-        class      = "^$",
-        title      = "^$",
-        xwayland   = true,
-        float      = true,
-        fullscreen = false,
-        pin        = false,
-    },
+	-- Fix some dragging issues with XWayland
+	name = "fix-xwayland-drags",
+	match = {
+		class = "^$",
+		title = "^$",
+		xwayland = true,
+		float = true,
+		fullscreen = false,
+		pin = false,
+	},
 
-    no_focus = true,
+	no_focus = true,
 })
 
 -- Layer rules also return a handle.
@@ -41,26 +41,31 @@ hl.window_rule({
 
 -- Hyprland-run windowrule
 hl.window_rule({
-    name  = "move-hyprland-run",
-    match = { class = "hyprland-run" },
+	name = "move-hyprland-run",
+	match = { class = "hyprland-run" },
 
-    move  = "20 monitor_h-120",
-    float = true,
+	move = "20 monitor_h-120",
+	float = true,
 })
 hl.window_rule({
-    name = "browser",
-    workspace = 2,
-    match = { class = "org.qutebrowser.qutebrowser" }
+	name = "browser",
+	workspace = 2,
+	match = { class = "org.qutebrowser.qutebrowser" },
 })
 hl.window_rule({
-    name = "popup",
-    match = { class = "yad" },
-    float = true
+	name = "popup",
+	match = { class = "yad" },
+	float = true,
 })
 hl.window_rule({
-    name = "audio-control",
-    match = { class = "com.saivert.pwvucontrol" },
-    float = true,
-    size = {400, 300},
-    move = {1480, 45}
+	name = "audio-control",
+	match = { class = "com.saivert.pwvucontrol" },
+	float = true,
+	size = { 400, 300 },
+	move = { 1480, 45 },
+})
+hl.window_rule({
+	name = "quick-shell",
+	match = { class = "org.qt-project.qml" },
+	float = true,
 })

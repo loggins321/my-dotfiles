@@ -1,15 +1,14 @@
-
-require('config.monitor')
-require('config.keybindings')
-require('config.autostart')
-require('config.decorations')
-require('config.env')
-require('config.layout')
-require('config.misc')
-require('config.input')
-require('config.windowrule')
-require('config.workspacerules')
-
+require("config.monitor")
+require("config.keybindings")
+require("config.autostart")
+require("config.decorations")
+require("config.env")
+require("config.layout")
+require("config.misc")
+require("config.input")
+require("config.windowrule")
+require("config.workspacerules")
+require("config.events")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -28,7 +27,6 @@ require('config.workspacerules')
 -- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
 -- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 -- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
-
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
